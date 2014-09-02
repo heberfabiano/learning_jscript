@@ -7,15 +7,28 @@
   </head>
   <body>
     <h2>Todo</h2>
+    <!-- The behavior of content under the div element below
+    will be managed using the TodoController class defined
+    in todo.js javascript file -->
     <div ng-controller="TodoController">
       <span>{{remaining()}} of {{todos.length}} remaining</span>
+      <!-- ng-click declares which method of the controller
+      will be called when clicking the link below -->
       [ <a href="" ng-click="archive()">archive</a> ]
       <ul class="unstyled">
+        <!-- ng-repeat unrolls a collection. In this case,
+        for every object in 'todos', AngularJS will create
+        a new copy of <li> element. The same goes when a 
+        object is removed from 'todos' collection. The
+        corresponding <li> element is removed as well -->
         <li ng-repeat="todo in todos">
           <input type="checkbox" ng-model="todo.done">
           <span class="done-{{todo.done}}">{{todo.text}}</span>
         </li>
       </ul>
+      
+      <!-- ng-submit intercepts form default submission and
+       instead calls addTodo function -->
       <form ng-submit="addTodo()">
         <input type="text" ng-model="todoText" size="30" placeholder="add new todo here">
         <input class="btn-primary" type="submit" value="add">

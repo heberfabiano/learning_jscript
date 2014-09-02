@@ -1,4 +1,5 @@
 angular.module('todoApp', [])
+/* $scope (is a service that) contains your model data. Its the link between the controller below and the view (html). */
   .controller('TodoController', ['$scope', function ($scope) {
     "use strict";
     $scope.todos = [
