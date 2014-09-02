@@ -1,4 +1,4 @@
 learning_jscript
 ================
 
-Estudando Javascript
+Estudando Javascript e desenvolvimento WEB em geral
